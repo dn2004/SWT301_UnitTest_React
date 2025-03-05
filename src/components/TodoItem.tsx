@@ -24,11 +24,23 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggle, onDelete, onEdit })
             </div>
 
             <div className="flex gap-2">
-                <Button variant="ghost" size="icon" onClick={() => onEdit(todo)} aria-label="Edit" data-testid={`todo-edit-${todo.id}`}>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => onEdit(todo)}
+                    aria-label="Edit"
+                    data-testid={`todo-edit-${todo.id}`}>
+
                     <Pencil className="w-5 h-5" />
                 </Button>
 
-                <Button variant="ghost" size="icon" onClick={() => onDelete(todo.id)} aria-label="Delete" data-testid={`todo-delete-${todo.id}`}>
+                <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => onDelete(todo.id)}
+                    aria-label="Delete"
+                    data-testid={`todo-delete-${todo.id}`}>
+
                     <Trash2 className="w-5 h-5 text-red-500" />
                 </Button>
             </div>

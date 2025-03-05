@@ -11,8 +11,9 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
     // ...
+    "types": ["jest"]
   },
-  "types": ["jest", "@testing-library/jest-dom"]
+
 }

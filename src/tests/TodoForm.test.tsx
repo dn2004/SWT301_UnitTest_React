@@ -17,7 +17,7 @@ describe("TodoForm Component", () => {
         // Act: No user action needed
 
         // Assert
-        expect(screen.getByTestId("todo-input")).toBe;
+        expect(screen.getByTestId("todo-input")).toBeInTheDocument();
         expect(screen.getByTestId("todo-submit-btn")).toBeInTheDocument();
     });
 
