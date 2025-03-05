@@ -1,17 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-interface Todo {
-    id: number;
-    text: string;
-    completed: boolean;
-}
-
-interface TodoFormProps {
-    addTodo: (text: string) => void;
-    editTodo: (updatedTodo: Todo) => void;
-    todoToEdit: Todo | null;
-    clearEdit: () => void;
-}
+import {TodoFormProps} from "../types/todo";
 
 
 
@@ -40,10 +28,12 @@ const TodoForm: React.FC<TodoFormProps> = ({ addTodo, editTodo, todoToEdit, clea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Add new todo..."
-                className="p-2 border rounded-lg w-full"
+                className="p-2 border rounded-lg w-full max-w-md"
                 data-testid="todo-input"
             />
-            <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-lg" data-testid="todo-submit-btn">
+            <button type="submit"
+                    className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+                    data-testid="todo-submit-btn">
                 {todoToEdit ? "Update" : "Add"}
             </button>
         </form>

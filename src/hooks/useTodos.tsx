@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
-
-interface Todo {
-    id: number;
-    text: string;
-    completed: boolean;
-}
+import {Todo} from "../types/todo";
 
 export function useTodos() {
     const [todos, setTodos] = useState<Todo[]>([]);
@@ -19,8 +14,8 @@ export function useTodos() {
             return false;
         }
 
-        if (trimmedText.length < 3 || trimmedText.length > 50) {
-            toast.error("Error", { description: "Todo must be between 3 and 50 characters!" });
+        if (trimmedText.length < 3 ) {
+            toast.error("Error", { description: "Todo must be higher than 2 characters!" });
             return false;
         }
 
@@ -31,7 +26,7 @@ export function useTodos() {
 
         if (!validateInput(text)) return;
 
-        setTodos([...todos, { id: Date.now(), text: text.trim(), completed: false }]);
+        setTodos([...todos, { id: Date.now(), text: text, completed: false }]);
         toast.success("Added", { description: `"${text.trim()}" added successfully!` });
     };
 
@@ -40,7 +35,7 @@ export function useTodos() {
     };
 
     const editTodo = (updatedTodo: Todo) => {
-        if(!validateInput(updatedTodo.text.trim())) return;
+        if(!validateInput(updatedTodo.text)) return;
 
         setTodos(todos.map(todo => (todo.id === updatedTodo.id ? updatedTodo : todo)));
         setTodoToEdit(null);
