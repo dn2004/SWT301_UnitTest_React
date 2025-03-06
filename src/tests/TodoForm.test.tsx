@@ -49,7 +49,7 @@ describe("TodoForm Component", () => {
     });
 
     test("pre-fills input when editing a todo", () => {
-        // Arrange
+        // Arranger
         const mockTodo = { id: 1, text: "Edit this todo", completed: false };
         render(<TodoForm addTodo={jest.fn()} editTodo={jest.fn()} todoToEdit={mockTodo} clearEdit={jest.fn()} />);
         const input = screen.getByTestId("todo-input");
