@@ -102,19 +102,23 @@
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,13 +126,38 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,41 +170,60 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import { Pencil, Trash2, CheckCircle, Circle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import {Pencil, Trash2, CheckCircle, Circle} from "lucide-react";
+import {Button} from "@/components/ui/button";
+import {TodoItemProps} from "../types/todo";
 &nbsp;
-interface Todo {
-    id: number;
-    text: string;
-    completed: boolean;
-}
-&nbsp;
-interface TodoItemProps {
-    todo: Todo;
-    onToggle: (id: number) =&gt; void;
-    onDelete: (id: number) =&gt; void;
-    onEdit: (todo: Todo) =&gt; void;
-}
-&nbsp;
-const TodoItem: React.FC&lt;TodoItemProps&gt; = ({ todo, onToggle, onDelete, onEdit }) =&gt; {
+const TodoItem: React.FC&lt;TodoItemProps&gt; = ({todo, onToggle, onDelete, onEdit}) =&gt; {
     return (
-        &lt;div className="flex items-center justify-between p-3 border rounded-lg bg-gray-50 shadow" data-testid={`todo-item-${todo.id}`}&gt;
-            &lt;div className="flex items-center cursor-pointer" onClick={() =&gt; onToggle(todo.id)} data-testid={`todo-toggle-${todo.id}`}&gt;
-                {todo.completed ? &lt;CheckCircle className="text-green-500" /&gt; : &lt;Circle className="text-gray-400" /&gt;}
-                &lt;span className={`ml-2 ${todo.completed ? "line-through text-gray-500" : "text-gray-700"}`}&gt;{todo.text}&lt;/span&gt;
+        &lt;div
+            className="flex flex-col sm:flex-row items-center sm:justify-between p-3 border rounded-lg bg-gray-50 shadow gap-y-2 sm:gap-0"
+            data-testid={`todo-item-${todo.id}`}&gt;
+&nbsp;
+            &lt;div className="flex items-start gap-x-3 w-full cursor-pointer"
+                 onClick={() =&gt; onToggle(todo.id)}
+                 data-testid={`todo-toggle-${todo.id}`}&gt;
+&nbsp;
+                {todo.completed ? (
+                    &lt;CheckCircle className="text-green-500 w-6 h-6 flex-shrink-0"/&gt;
+                ) : (
+                    &lt;Circle className="text-gray-400 w-6 h-6 flex-shrink-0"/&gt;
+                )}
+                &lt;span
+                    className={`max-w-full break-words sm:max-w-xs flex-grow text-gray-700 
+                    ${todo.completed ? 'line-through text-gray-500' : ''}`}
+                    &gt;{todo.text}
+                &lt;/span&gt;
             &lt;/div&gt;
 &nbsp;
-            &lt;div className="flex gap-2"&gt;
-                &lt;Button variant="ghost" size="icon" onClick={() =&gt; onEdit(todo)} aria-label="Edit" data-testid={`todo-edit-${todo.id}`}&gt;
-                    &lt;Pencil className="w-5 h-5" /&gt;
+&nbsp;
+            &lt;div className="flex gap-3 justify-center sm:justify-end w-full sm:w-auto"&gt;
+                &lt;Button
+                    variant="ghost"
+                    size="icon"
+                    className="w-10 h-10 hover:bg-gray-200 rounded-full"
+                    onClick={() =&gt; onEdit(todo)}
+                    aria-label="Edit"
+                    data-testid={`todo-edit-${todo.id}`}&gt;
+                    &lt;Pencil className="w-5 h-5 text-gray-600"/&gt;
                 &lt;/Button&gt;
 &nbsp;
-                &lt;Button variant="ghost" size="icon" onClick={() =&gt; onDelete(todo.id)} aria-label="Delete" data-testid={`todo-delete-${todo.id}`}&gt;
-                    &lt;Trash2 className="w-5 h-5 text-red-500" /&gt;
+                &lt;Button
+                    variant="ghost"
+                    size="icon"
+                    className="w-10 h-10 hover:bg-red-100 rounded-full"
+                    onClick={() =&gt; onDelete(todo.id)}
+                    aria-label="Delete"
+                    data-testid={`todo-delete-${todo.id}`}&gt;
+                    &lt;Trash2 className="w-5 h-5 text-red-500"/&gt;
                 &lt;/Button&gt;
             &lt;/div&gt;
         &lt;/div&gt;
+&nbsp;
     );
 };
 &nbsp;
@@ -187,7 +235,7 @@ export default TodoItem;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-03-05T06:09:57.697Z
+                at 2025-03-06T08:01:03.079Z
             </div>
         <script src="../prettify.js"></script>
         <script>
