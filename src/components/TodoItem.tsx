@@ -18,8 +18,10 @@ const TodoItem: React.FC<TodoItemProps> = ({todo, onToggle, onDelete, onEdit}) =
                 ) : (
                     <Circle className="text-gray-400 w-6 h-6 flex-shrink-0"/>
                 )}
-                <span className="max-w-full break-words sm:max-w-xs flex-grow text-gray-700">
-                    {todo.text}
+                <span
+                    className={`max-w-full break-words sm:max-w-xs flex-grow text-gray-700 
+                    ${todo.completed ? 'line-through text-gray-500' : ''}`}
+                    >{todo.text}
                 </span>
             </div>
 

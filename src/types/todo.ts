@@ -18,3 +18,10 @@ export interface TodoItemProps {
     onDelete: (id: number) => void;
     onEdit: (todo: Todo) => void;
 }
+
+export interface TodoListProps {
+    todos: Todo[];
+    onToggle: (id: number) => void;
+    onDelete: (id: number) => void;
+    onEdit: (todo: Todo) => void;
+}

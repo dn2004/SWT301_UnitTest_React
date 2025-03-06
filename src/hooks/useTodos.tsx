@@ -56,5 +56,5 @@ export function useTodos() {
     };
 
 
-    return { addTodo, todoToEdit, todos, toggleTodo, deleteTodo, editTodo, setTodoToEdit };
+    return { todoToEdit, todos, addTodo, toggleTodo, deleteTodo, editTodo, setTodoToEdit };
 }

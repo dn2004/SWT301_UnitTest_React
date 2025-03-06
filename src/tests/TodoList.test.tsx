@@ -35,7 +35,7 @@ describe("TodoList Component", () => {
         expect(screen.getByTestId("todo-empty")).toBeInTheDocument();
     });
 
-    test("calls onToggle when clicking a todo item and shows a success toast", () => {
+    test("calls onToggle when clicking a todo item", () => {
         // Arrange
         const mockToggleTodo = jest.fn();
         render(<TodoList todos={mockTodos} onToggle={mockToggleTodo} onDelete={jest.fn()} onEdit={jest.fn()}/>);
@@ -49,7 +49,7 @@ describe("TodoList Component", () => {
         expect(mockToggleTodo).toHaveBeenCalledWith(1);
     });
 
-    test("calls onDelete when clicking the delete button and shows an error toast", () => {
+    test("calls onDelete when clicking the delete button", () => {
         // Arrange
         const mockDeleteTodo = jest.fn();
         render(<TodoList todos={mockTodos} onToggle={jest.fn()} onDelete={mockDeleteTodo} onEdit={jest.fn()}/>);
